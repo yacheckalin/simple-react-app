@@ -54,7 +54,7 @@ const AuthForm = () => {
           <div className="form-item">
             <p> Пароль </p>
             <input
-              className="form-input"
+              className={`form-input ${!passwordValid && `error`}`}
               type="password"
               value={password}
               onChange={(e) => handlePassword(e)}
