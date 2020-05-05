@@ -1,12 +1,19 @@
 import React from "react";
 import AuthForm from "./auth-form";
 import "./../styles.css";
+import { useAuthContext } from "./auth-context-provider";
 
 const AuthContainer = () => {
+  const context = useAuthContext();
+
   return (
-    <div className="grid-container">
-      <AuthForm />
-    </div>
+    <>
+      {!context?.isAuthorised && (
+        <div className="grid-container">
+          <AuthForm />
+        </div>
+      )}
+    </>
   );
 };
 

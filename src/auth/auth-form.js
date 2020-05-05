@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { isEmailValid, isPasswordValid } from "./helpers";
+import { useAuthContext } from "./auth-context-provider";
 
 const AuthForm = () => {
   const [email, setEmail] = useState("");
@@ -7,11 +8,14 @@ const AuthForm = () => {
   const [emailValid, setEmailValid] = useState(true);
   const [passwordValid, setPasswordValid] = useState(true);
 
+  const { login, loginError, resetLoginError } = useAuthContext();
+
   const handleEmail = (e) => {
     const { value } = e.target;
 
     setEmail(value);
     setEmailValid(isEmailValid(value));
+    resetLoginError();
   };
 
   const handlePassword = (e) => {
@@ -19,6 +23,12 @@ const AuthForm = () => {
 
     setPassword(value);
     setPasswordValid(isPasswordValid(value));
+    resetLoginError();
+  };
+
+  const handleLogin = (e) => {
+    login({ email, password });
+    e.preventDefault();
   };
   return (
     <div className="form-container">
@@ -55,10 +65,10 @@ const AuthForm = () => {
       </div>
 
       <div className="form-footer">
-        <button>
+        <button onClick={(e) => handleLogin(e)}>
           Вход <span>&#8594;</span>
         </button>
-        <p>{(!emailValid || !passwordValid) && "Неверный логин или пароль"}</p>
+        <p>{loginError && "Неверный логин или пароль"}</p>
       </div>
     </div>
   );
