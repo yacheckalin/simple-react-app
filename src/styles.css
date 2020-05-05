@@ -64,6 +64,9 @@ div#root {
   font-size: 18px;
   color: #a0a0a0;
 }
+.form-input:focus {
+  outline: 0;
+}
 
 .form-input.error {
   border-color: #d32f2f;
