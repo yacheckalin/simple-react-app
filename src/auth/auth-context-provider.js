@@ -25,7 +25,6 @@ const AuthContextProvider = ({ children }) => {
         setLoginError(response.error);
         setIsAuthorised(false);
       } else {
-        console.log("here");
         setIsAuthorised(true);
       }
     });
