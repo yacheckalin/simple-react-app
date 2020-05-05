@@ -1,7 +1,12 @@
 import React from "react";
+import AuthForm from "./auth-form";
 
 const AuthContainer = () => {
-  return <div>Login Form Here...</div>;
+  return (
+    <div>
+      <AuthForm />
+    </div>
+  );
 };
 
 export default AuthContainer;
