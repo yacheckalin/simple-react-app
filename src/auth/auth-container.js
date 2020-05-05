@@ -1,9 +1,10 @@
 import React from "react";
 import AuthForm from "./auth-form";
+import "./../styles.css";
 
 const AuthContainer = () => {
   return (
-    <div>
+    <div className="grid-container">
       <AuthForm />
     </div>
   );
