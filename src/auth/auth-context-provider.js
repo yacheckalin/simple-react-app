@@ -20,7 +20,7 @@ const AuthContextProvider = ({ children }) => {
 
   const login = ({ email: login, password }) => {
     //TODO: change for axios request
-    const response = Promise.resolve(successResponse);
+    const response = Promise.resolve(errorResponse);
 
     response.then((response) => {
       const res = JSON.parse(response);
