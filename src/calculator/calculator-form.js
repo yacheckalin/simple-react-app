@@ -1,20 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
 
+import Button from "./calculator-form-button";
 import { useCurrencyContext } from "../currency/currency-context-provider";
 
 const Form = styled.form`
-  button {
-    background-color: #1a237e;
-    border-radius: 30px;
-    color: white;
-    padding: 15px 30px;
-    font-size: 18px;
-    :focus {
-      outline: none;
-    }
-  }
-
   input,
   select {
     max-width: 98px;
@@ -32,18 +22,29 @@ const Form = styled.form`
 `;
 
 const CalculatorForm = () => {
-  const [exchangeOne, setExchangeOne] = useState("USD");
-  const [exchangeTwo, setExchangeTwo] = useState("AUD");
+  const {
+    currencyListOne,
+    currencyListTwo,
+    exchangeOne,
+    exchangeTwo,
+    exchangeAmount,
+    setExchangeAmount,
+    setExchangeTwo,
+    validateExchangeOne,
+  } = useCurrencyContext();
 
-  const { currencyList, calculateExchange } = useCurrencyContext();
   return (
     <Form>
-      <input type="text" />
+      <input
+        type="text"
+        value={exchangeAmount}
+        onChange={(e) => setExchangeAmount(parseFloat(e.target.value))}
+      />
       <select
         defaultValue={exchangeOne}
-        onChange={(e) => setExchangeOne(e.target.value)}
+        onChange={(e) => validateExchangeOne(e.target.value)}
       >
-        {currencyList.map((item, index) => (
+        {currencyListOne.map((item, index) => (
           <option key={index} value={item}>
             {item}
           </option>
@@ -53,20 +54,13 @@ const CalculatorForm = () => {
         defaultValue={exchangeTwo}
         onChange={(e) => setExchangeTwo(e.target.value)}
       >
-        {currencyList.map((item, index) => (
+        {currencyListTwo.map((item, index) => (
           <option key={index} value={item}>
             {item}
           </option>
         ))}
       </select>
-      <button
-        onClick={(e) => {
-          calculateExchange(exchangeOne, exchangeTwo);
-          e.preventDefault();
-        }}
-      >
-        Рассчитать
-      </button>
+      <Button disabled={!exchangeAmount ? true : false}>Расчитать</Button>
     </Form>
   );
 };

@@ -68,20 +68,37 @@ let currencyData = [
   },
 ];
 let currencyListSet = new Set();
+let currencyListSetData = new Set();
 
 const CurrencyContextProvider = ({ children }) => {
   const [data, setData] = useState(currencyData);
   const [currencyList, setCurrencyList] = useState([]);
+  const [currencyListData, setCurrencyListData] = useState([]);
+  const [currencyListOne, setCurrencyListOne] = useState([]);
+  const [currencyListTwo, setCurrencyListTwo] = useState([]);
   const [exchangeSummary, setExchangeSummary] = useState(null);
+  const [exchangeAmount, setExchangeAmount] = useState(0);
+  const [exchangeOne, setExchangeOne] = useState("USD");
+  const [exchangeTwo, setExchangeTwo] = useState("USD");
 
   useEffect(() => {
-    currencyData.forEach(({ asset }) => {
+    currencyData.forEach(({ asset, quote }) => {
       const [first, second] = asset.split("/");
-      console.log(first, second);
+
+      currencyListSetData.add([first, second, parseFloat(quote)]);
+      currencyListSetData.add([
+        second,
+        first,
+        parseFloat((1 / quote).toFixed(4)),
+      ]);
       currencyListSet.add(first);
       currencyListSet.add(second);
     });
     setCurrencyList([...currencyListSet.values()]);
+    setCurrencyListData([...currencyListSetData.values()]);
+
+    setCurrencyListOne([...currencyListSet.values()]);
+    setCurrencyListTwo([...currencyListSet.values()]);
   }, []);
 
   const handleFavoriteChange = (index) => {
@@ -91,9 +108,28 @@ const CurrencyContextProvider = ({ children }) => {
     }
   };
 
-  const handleExchangeCalculation = ({ first, second, sum }) => {
-    const rate = getExchangeRate({ data, first, second });
-    setExchangeSummary(Number.parseFloat(rate * sum).toPrecision(4));
+  const handleExchangeCalculation = () => {
+    const rate = getExchangeRate({
+      currencyListData,
+      exchangeOne,
+      exchangeTwo,
+    });
+
+    setExchangeSummary(parseFloat((rate * exchangeAmount).toPrecision(2)));
+  };
+
+  const validateExchangeOne = (value) => {
+    // exclude all items from second currency without a rate pair
+    const filteredCurrencyTypeList = currencyListData.filter(
+      ([one, two, rate]) => one === value
+    );
+    const uniqueTypes = new Set();
+    filteredCurrencyTypeList.forEach(([, val]) => uniqueTypes.add(val));
+    setCurrencyListTwo([...uniqueTypes]);
+
+    //change the first element in the second currency
+    setExchangeTwo([...uniqueTypes][0]);
+    setExchangeOne(value);
   };
 
   return (
@@ -101,9 +137,19 @@ const CurrencyContextProvider = ({ children }) => {
       value={{
         data,
         setFavorite: handleFavoriteChange,
+        currencyListOne,
+        currencyListTwo,
         currencyList,
+        currencyListData,
         calculateExchange: handleExchangeCalculation,
         exchangeSummary,
+        exchangeAmount,
+        setExchangeAmount,
+        setExchangeOne,
+        setExchangeTwo,
+        exchangeTwo,
+        exchangeOne,
+        validateExchangeOne,
       }}
     >
       {children}

@@ -47,6 +47,9 @@ const Tab = styled.a`
   :first-child {
     border-top-left-radius: 20px;
   }
+  :hover {
+    cursor: pointer;
+  }
 `;
 
 const TabsContainer = () => {
@@ -86,17 +89,10 @@ const TabsContainer = () => {
           </Tab>
         </div>
 
-        {tabName === "currency" && (
-          <CurrencyContextProvider>
-            <CurrencyContainer />
-          </CurrencyContextProvider>
-        )}
-
-        {tabName === "calculator" && (
-          <CurrencyContextProvider>
-            <CalculatorContainer />
-          </CurrencyContextProvider>
-        )}
+        <CurrencyContextProvider>
+          {tabName === "currency" && <CurrencyContainer />}
+          {tabName === "calculator" && <CalculatorContainer />}
+        </CurrencyContextProvider>
       </div>
     </Container>
   );
