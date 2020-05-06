@@ -1,7 +1,4 @@
 import React, { useState, useContext } from "react";
-import axios from "axios";
-
-import { API_URL } from "./constants";
 
 const context = {
   isAuthorised: false,
@@ -10,19 +7,25 @@ const context = {
 export const AuthContext = React.createContext(context);
 export const useAuthContext = () => useContext(AuthContext);
 
+const errorResponse = JSON.stringify({
+  result: "error",
+  error:
+    "\u041d\u0435\u0432\u0435\u0440\u043d\u044b\u0435 \u043f\u0430\u0440\u0430\u043c\u0435\u0442\u0440\u044b",
+});
+const successResponse = JSON.stringify({ result: "ok" });
+
 const AuthContextProvider = ({ children }) => {
   const [isAuthorised, setIsAuthorised] = useState();
   const [loginError, setLoginError] = useState("");
 
   const login = ({ email: login, password }) => {
-    const response = Promise.resolve({
-      // result: "error",
-      // error: "Some message",
-      result: "ok",
-    });
+    //TODO: change for axios request
+    const response = Promise.resolve(successResponse);
+
     response.then((response) => {
-      if (response.error) {
-        setLoginError(response.error);
+      const res = JSON.parse(response);
+      if (res.error) {
+        setLoginError(res.error);
         setIsAuthorised(false);
       } else {
         setIsAuthorised(true);
@@ -31,10 +34,18 @@ const AuthContextProvider = ({ children }) => {
   };
 
   const logout = ({ email, password }) => {
-    // axios
-    //   .post(API_URL, { action: "logout", login, password })
-    //   .then((response) => console.log(response))
-    //   .catch((e) => console.log(e));
+    //TODO: change for axios request
+    const response = Promise.resolve(successResponse);
+
+    response.then((resp) => {
+      const res = JSON.parse(resp);
+
+      if (!res.error) {
+        setLoginError("");
+        setIsAuthorised(false);
+      }
+    });
+
     setIsAuthorised(false);
     setLoginError("");
   };

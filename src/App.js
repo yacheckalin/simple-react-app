@@ -1,13 +1,13 @@
 import React from "react";
 import AuthContainer from "./auth";
 import AuthContextProvider from "./auth/auth-context-provider";
-import AppContainer from "./app-container";
+import Authorized from "./auth/auth-wrapper";
 
 const App = () => {
   return (
     <AuthContextProvider>
       <AuthContainer />
-      <AppContainer>Some authorized content here</AppContainer>
+      <Authorized>Some authorized content here</Authorized>
     </AuthContextProvider>
   );
 };
