@@ -3,9 +3,8 @@ import styled from "styled-components";
 import { useCurrencyContext } from "../currency/currency-context-provider";
 
 const StyledButton = styled.button`
-  background-color: ${(props) => (props.disabled ? `#e1e1e1` : `#1a237e`)};
-
   border-radius: 30px;
+  background-color: ${(props) => (props.disabled ? `#e1e1e1` : `#1a237e`)};
   color: ${(props) => (props.disabled ? `#1a237e` : `white`)};
   padding: 15px 30px;
   font-size: 18px;
@@ -19,7 +18,6 @@ const StyledButton = styled.button`
 
 const Button = ({ disabled, children }) => {
   const { calculateExchange } = useCurrencyContext();
-
   return (
     <StyledButton
       disabled={disabled}
