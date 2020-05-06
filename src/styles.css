@@ -8,7 +8,7 @@ body {
   width: 100%;
   max-width: 1280px;
   margin: 0 auto;
-  background-color: #b58080;
+  /* background-color: #b58080; */
   font-family: "Open Sans", sans-serif;
 }
 div#root {
