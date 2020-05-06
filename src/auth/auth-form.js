@@ -60,12 +60,11 @@ const FormItem = styled.div`
     width: 245px;
     font-size: 18px;
     color: #a0a0a0;
+    :focus {
+      outline: 0;
+    }
   }
-  div.form-input:focus {
-    outline: 0;
-  }
-
-  div.form-input.error {
+  .error {
     border-color: #d32f2f;
   }
 `;
@@ -164,7 +163,9 @@ const AuthForm = () => {
               onChange={(e) => handlePassword(e)}
               id="password"
             />
-            <p id="password-error">{!passwordValid && "Неверный пароль"}&nbsp;</p>
+            <p id="password-error">
+              {!passwordValid && "Неверный пароль"}&nbsp;
+            </p>
           </FormItem>
         </FormRow>
       </FormBody>
