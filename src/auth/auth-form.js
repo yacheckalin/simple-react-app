@@ -148,8 +148,9 @@ const AuthForm = () => {
               type="text"
               value={email}
               onChange={(e) => handleEmail(e)}
+              id="email"
             />
-            <p>{!emailValid && "Неверный email"}&nbsp;</p>
+            <p id="email-error">{!emailValid && "Неверный email"}&nbsp;</p>
           </FormItem>
         </FormRow>
 
@@ -161,8 +162,9 @@ const AuthForm = () => {
               type="password"
               value={password}
               onChange={(e) => handlePassword(e)}
+              id="password"
             />
-            <p>{!passwordValid && "Неверный пароль"}&nbsp;</p>
+            <p id="password-error">{!passwordValid && "Неверный пароль"}&nbsp;</p>
           </FormItem>
         </FormRow>
       </FormBody>
@@ -171,7 +173,7 @@ const AuthForm = () => {
         <button onClick={(e) => handleLogin(e)}>
           Вход <span>&#8594;</span>
         </button>
-        <p>{loginError}</p>
+        <p id="form-error">{loginError}</p>
       </FormFooter>
     </FormContainer>
   );

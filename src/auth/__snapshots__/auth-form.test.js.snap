@@ -1,0 +1,64 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<AuthForm /> renders and displays properly 1`] = `
+<styled.div>
+  <styled.div>
+    <span>
+      Вход в личный кабинет
+    </span>
+  </styled.div>
+  <styled.div>
+    <styled.div>
+      <styled.div>
+        <p>
+           Логин 
+        </p>
+        <input
+          className="form-input false"
+          id="email"
+          onChange={[Function]}
+          type="text"
+          value=""
+        />
+        <p
+          id="email-error"
+        >
+           
+        </p>
+      </styled.div>
+    </styled.div>
+    <styled.div>
+      <styled.div>
+        <p>
+           Пароль 
+        </p>
+        <input
+          className="form-input false"
+          id="password"
+          onChange={[Function]}
+          type="password"
+          value=""
+        />
+        <p
+          id="password-error"
+        >
+           
+        </p>
+      </styled.div>
+    </styled.div>
+  </styled.div>
+  <styled.div>
+    <button
+      onClick={[Function]}
+    >
+      Вход 
+      <span>
+        →
+      </span>
+    </button>
+    <p
+      id="form-error"
+    />
+  </styled.div>
+</styled.div>
+`;

@@ -58,6 +58,7 @@ const AuthContextProvider = ({ children }) => {
     <AuthContext.Provider
       value={{
         isAuthorised,
+        setIsAuthorised,
         login,
         logout,
         loginError,
