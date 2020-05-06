@@ -72,7 +72,7 @@ const CurrencyContextProvider = ({ children }) => {
   const handleFavoriteChange = (index) => {
     if (currencyData[index]) {
       currencyData[index].favorite = !currencyData[index].favorite;
-      setData([...currencyData]);
+      setData([...currencyData.sort((a, b) => b.favorite - a.favorite)]);
     }
   };
   return (
