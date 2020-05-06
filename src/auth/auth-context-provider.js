@@ -15,12 +15,12 @@ const errorResponse = JSON.stringify({
 const successResponse = JSON.stringify({ result: "ok" });
 
 const AuthContextProvider = ({ children }) => {
-  const [isAuthorised, setIsAuthorised] = useState();
+  const [isAuthorised, setIsAuthorised] = useState(true);
   const [loginError, setLoginError] = useState("");
 
   const login = ({ email: login, password }) => {
     //TODO: change for axios request
-    const response = Promise.resolve(errorResponse);
+    const response = Promise.resolve(successResponse);
 
     response.then((response) => {
       const res = JSON.parse(response);
