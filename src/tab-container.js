@@ -4,6 +4,8 @@ import styled from "styled-components";
 import CurrencyContainer from "./currency";
 import CurrencyContextProvider from "./currency/currency-context-provider";
 
+import CalculatorContainer from "./calculator";
+
 const Container = styled.div`
   display: flex;
   width: 100%;
@@ -87,6 +89,12 @@ const TabsContainer = () => {
         {tabName === "currency" && (
           <CurrencyContextProvider>
             <CurrencyContainer />
+          </CurrencyContextProvider>
+        )}
+
+        {tabName === "calculator" && (
+          <CurrencyContextProvider>
+            <CalculatorContainer />
           </CurrencyContextProvider>
         )}
       </div>

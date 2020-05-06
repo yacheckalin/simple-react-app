@@ -1,6 +1,8 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
 
-export const CurrencyContext = React.createContext();
+import { getExchangeRate } from "../calculator/helpers";
+
+export const CurrencyContext = React.createContext({ currencyList: [] });
 export const useCurrencyContext = () => useContext(CurrencyContext);
 
 let currencyData = [
@@ -65,9 +67,22 @@ let currencyData = [
     }).format(Date.now()),
   },
 ];
+let currencyListSet = new Set();
 
 const CurrencyContextProvider = ({ children }) => {
   const [data, setData] = useState(currencyData);
+  const [currencyList, setCurrencyList] = useState([]);
+  const [exchangeSummary, setExchangeSummary] = useState(null);
+
+  useEffect(() => {
+    currencyData.forEach(({ asset }) => {
+      const [first, second] = asset.split("/");
+      console.log(first, second);
+      currencyListSet.add(first);
+      currencyListSet.add(second);
+    });
+    setCurrencyList([...currencyListSet.values()]);
+  }, []);
 
   const handleFavoriteChange = (index) => {
     if (currencyData[index]) {
@@ -75,9 +90,21 @@ const CurrencyContextProvider = ({ children }) => {
       setData([...currencyData.sort((a, b) => b.favorite - a.favorite)]);
     }
   };
+
+  const handleExchangeCalculation = ({ first, second, sum }) => {
+    const rate = getExchangeRate({ data, first, second });
+    setExchangeSummary(Number.parseFloat(rate * sum).toPrecision(4));
+  };
+
   return (
     <CurrencyContext.Provider
-      value={{ data, setFavorite: handleFavoriteChange }}
+      value={{
+        data,
+        setFavorite: handleFavoriteChange,
+        currencyList,
+        calculateExchange: handleExchangeCalculation,
+        exchangeSummary,
+      }}
     >
       {children}
     </CurrencyContext.Provider>
