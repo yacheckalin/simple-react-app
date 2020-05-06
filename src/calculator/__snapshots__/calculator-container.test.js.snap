@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<CalculatorContainer /> renders and displays properly 1`] = `
+<styled.div
+  className="calc-container"
+>
+  <div
+    className="calc-header"
+  >
+    Конвертация валют
+  </div>
+  <div
+    className="calc-body"
+  >
+    <div
+      className="calc-row"
+    >
+      <p>
+        Сумма
+      </p>
+      <CalculatorForm />
+    </div>
+    <div
+      className="calc-row"
+    >
+      <p>
+        Итого
+      </p>
+      <p
+        className="calc-result"
+      >
+         
+      </p>
+    </div>
+  </div>
+</styled.div>
+`;

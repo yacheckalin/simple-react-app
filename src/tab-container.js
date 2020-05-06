@@ -4,6 +4,8 @@ import styled from "styled-components";
 import CurrencyContainer from "./currency";
 import CurrencyContextProvider from "./currency/currency-context-provider";
 
+import CalculatorContainer from "./calculator";
+
 const Container = styled.div`
   display: flex;
   width: 100%;
@@ -45,6 +47,9 @@ const Tab = styled.a`
   :first-child {
     border-top-left-radius: 20px;
   }
+  :hover {
+    cursor: pointer;
+  }
 `;
 
 const TabsContainer = () => {
@@ -84,11 +89,10 @@ const TabsContainer = () => {
           </Tab>
         </div>
 
-        {tabName === "currency" && (
-          <CurrencyContextProvider>
-            <CurrencyContainer />
-          </CurrencyContextProvider>
-        )}
+        <CurrencyContextProvider>
+          {tabName === "currency" && <CurrencyContainer />}
+          {tabName === "calculator" && <CalculatorContainer />}
+        </CurrencyContextProvider>
       </div>
     </Container>
   );

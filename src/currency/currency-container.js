@@ -16,11 +16,6 @@ const Table = styled.table`
   thead {
     background-color: #1a237e;
   }
-
-  tr:hover {
-    background-color: #e1e1e1;
-  }
-
   th,
   td {
     padding: 20px 0;
