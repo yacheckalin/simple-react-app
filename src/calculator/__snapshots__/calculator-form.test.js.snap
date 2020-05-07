@@ -9,7 +9,7 @@ exports[`<CalculatorForm /> renders and displays properly 1`] = `
   />
   <Memo()
     defaultValue="U"
-    onChangeHandler={[MockFunction]}
+    onChangeHandler={[Function]}
     optionsList={
       Array [
         "USD",
@@ -22,6 +22,7 @@ exports[`<CalculatorForm /> renders and displays properly 1`] = `
   />
   <Memo()
     defaultValue="U"
+    onChangeHandler={[Function]}
     optionsList={
       Array [
         "USD",
