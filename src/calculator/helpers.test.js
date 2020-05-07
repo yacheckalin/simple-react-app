@@ -16,18 +16,26 @@ describe("helpers", () => {
       ["USD", "CAD", 1.31],
       ["CAD", "USD", 0.7634],
     ],
-    exchangeOne: "USD",
-    exchangeTwo: "EUR",
+    exchangeOne: ["USD", { disabled: false }],
+    exchangeTwo: ["EUR", { disabled: false }],
   };
 
   test("getExchangeRate return 1", () => {
     expect(
-      getExchangeRate({ ...props, exchangeOne: "USD", exchangeTwo: "USD" })
+      getExchangeRate({
+        ...props,
+        exchangeOne: ["USD", { disabled: false }],
+        exchangeTwo: ["USD", { disabled: false }],
+      })
     ).toBe(1);
   });
   test("getExchangeRate return 1.12", () => {
     expect(
-      getExchangeRate({ ...props, exchangeOne: "EUR", exchangeTwo: "USD" })
+      getExchangeRate({
+        ...props,
+        exchangeOne: ["EUR", { disabled: false }],
+        exchangeTwo: ["USD", { disabled: false }],
+      })
     ).toBe(1.12);
   });
 });

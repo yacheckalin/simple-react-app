@@ -78,8 +78,8 @@ const CurrencyContextProvider = ({ children }) => {
   const [currencyListTwo, setCurrencyListTwo] = useState([]);
   const [exchangeSummary, setExchangeSummary] = useState(null);
   const [exchangeAmount, setExchangeAmount] = useState(0);
-  const [exchangeOne, setExchangeOne] = useState("USD");
-  const [exchangeTwo, setExchangeTwo] = useState("USD");
+  const [exchangeOne, setExchangeOne] = useState(["USD", { disabled: false }]);
+  const [exchangeTwo, setExchangeTwo] = useState(["USD", { disabled: false }]);
 
   useEffect(() => {
     currencyData.forEach(({ asset, quote }) => {
@@ -97,8 +97,12 @@ const CurrencyContextProvider = ({ children }) => {
     setCurrencyList([...currencyListSet.values()]);
     setCurrencyListData([...currencyListSetData.values()]);
 
-    setCurrencyListOne([...currencyListSet.values()]);
-    setCurrencyListTwo([...currencyListSet.values()]);
+    setCurrencyListOne(
+      [...currencyListSet.values()].map((item) => [item, { disabled: false }])
+    );
+    setCurrencyListTwo(
+      [...currencyListSet.values()].map((item) => [item, { disabled: false }])
+    );
   }, []);
 
   const handleFavoriteChange = (index) => {
@@ -119,18 +123,30 @@ const CurrencyContextProvider = ({ children }) => {
   };
 
   const validateExchangeOne = (value) => {
-    // exclude all items from second currency without a rate pair
+    //exclude all items from second currency without a rate pair
     const filteredCurrencyTypeList = currencyListData.filter(
-      ([one, two, rate]) => one === value
+      ([one, ,]) => one === value
     );
-    const uniqueTypes = new Set();
-    filteredCurrencyTypeList.forEach(([, val]) => uniqueTypes.add(val));
-    setCurrencyListTwo([...uniqueTypes]);
 
+    const secondCurrency = filteredCurrencyTypeList.map(([, item]) => item);
     //change the first element in the second currency
-    setExchangeTwo([...uniqueTypes][0]);
-    setExchangeOne(value);
+    const listTwo = currencyListTwo.map((item) => {
+      const [el, prop] = item;
+      if (secondCurrency.includes(el) || el === value) {
+        prop.disabled = false;
+      } else {
+        prop.disabled = true;
+      }
+
+      return item;
+    });
+
+    setCurrencyListTwo([...listTwo]);
+    setExchangeOne([value, { disabled: false }]);
   };
+
+  const validateExchangeTwo = (value) =>
+    setExchangeTwo([value, { disabled: false }]);
 
   return (
     <CurrencyContext.Provider
@@ -150,6 +166,7 @@ const CurrencyContextProvider = ({ children }) => {
         exchangeTwo,
         exchangeOne,
         validateExchangeOne,
+        validateExchangeTwo,
       }}
     >
       {children}

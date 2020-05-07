@@ -30,8 +30,8 @@ const CalculatorForm = () => {
     exchangeTwo,
     exchangeAmount,
     setExchangeAmount,
-    setExchangeTwo,
     validateExchangeOne,
+    validateExchangeTwo,
   } = useCurrencyContext();
 
   return (
@@ -42,14 +42,14 @@ const CalculatorForm = () => {
         onChange={(e) => setExchangeAmount(parseFloat(e.target.value))}
       />
       <Select
-        defaultValue={exchangeOne}
+        defaultValue={exchangeOne[0]}
         optionsList={currencyListOne}
         onChangeHandler={validateExchangeOne}
       />
       <Select
-        defaultValue={exchangeTwo}
+        defaultValue={exchangeTwo[0]}
         optionsList={currencyListTwo}
-        onChangeHandler={setExchangeTwo}
+        onChangeHandler={validateExchangeTwo}
       />
       <Button disabled={!exchangeAmount ? true : false}>Расчитать</Button>
     </Form>

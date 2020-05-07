@@ -16,19 +16,19 @@ const Style = styled.select`
   }
 `;
 
-const Select = ({ defaultValue, optionsList, onChangeHandler }) => {
+const Select = React.memo(({ defaultValue, optionsList, onChangeHandler }) => {
   return (
     <Style
       defaultValue={defaultValue}
       onChange={(e) => onChangeHandler(e.target.value)}
     >
-      {optionsList.map((item, index) => (
-        <option key={index} value={item}>
+      {optionsList.map(([item, prop], index) => (
+        <option key={index} value={item} disabled={prop.disabled}>
           {item}
         </option>
       ))}
     </Style>
   );
-};
+});
 
 export default Select;
