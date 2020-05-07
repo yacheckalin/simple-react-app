@@ -115,7 +115,7 @@ const CurrencyContextProvider = ({ children }) => {
       exchangeTwo,
     });
 
-    setExchangeSummary(parseFloat((rate * exchangeAmount).toPrecision(2)));
+    setExchangeSummary((rate * exchangeAmount).toFixed(2));
   };
 
   const validateExchangeOne = (value) => {
