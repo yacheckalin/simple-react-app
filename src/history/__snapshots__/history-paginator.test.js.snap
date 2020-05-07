@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Pagination /> renders and displays properly 1`] = `
+<div
+  className="pagination-container"
+>
+   
+  1
+   / 
+  10
+  <span
+    onClick={[MockFunction]}
+  >
+    →
+  </span>
+</div>
+`;
