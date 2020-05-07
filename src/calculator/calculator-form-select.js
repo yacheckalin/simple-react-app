@@ -26,7 +26,7 @@ const FormSelect = React.memo(
   ({ defaultValue, optionsList, onChangeHandler }) => {
     let options = [];
     optionsList.map(([item, prop]) =>
-      options.push({ value: item, label: item })
+      options.push({ value: item, label: item, disabled: prop.disabled })
     );
     const customStyles = {
       control: (base) => ({
@@ -70,23 +70,17 @@ const FormSelect = React.memo(
         zIndex: 1000,
       }),
     };
+
     return (
-      <Style
-        defaultValue={defaultValue}
-        onChange={(e) => onChangeHandler(e.target.value)}
-      >
+      <Style>
         <Select
           styles={customStyles}
           defaultValue={defaultValue}
           options={options}
           placeholder={defaultValue}
-        >
-          {/* {optionsList.map(([item, prop], index) => (
-          <option key={index} value={item} disabled={prop.disabled}>
-            {item}
-          </option>
-        ))} */}
-        </Select>
+          onChange={onChangeHandler}
+          isOptionDisabled={(option) => option.disabled}
+        ></Select>
       </Style>
     );
   }

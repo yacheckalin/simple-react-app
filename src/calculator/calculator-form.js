@@ -44,12 +44,12 @@ const CalculatorForm = () => {
       <FormSelect
         defaultValue={exchangeOne[0]}
         optionsList={currencyListOne}
-        onChangeHandler={validateExchangeOne}
+        onChangeHandler={({ value }) => validateExchangeOne(value)}
       />
       <FormSelect
         defaultValue={exchangeTwo[0]}
         optionsList={currencyListTwo}
-        onChangeHandler={validateExchangeTwo}
+        onChangeHandler={({ value }) => validateExchangeTwo(value)}
       />
       <Button disabled={!exchangeAmount ? true : false}>Расчитать</Button>
     </Form>
