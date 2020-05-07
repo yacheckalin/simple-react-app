@@ -22,8 +22,8 @@ const Button = ({ disabled, children }) => {
     <StyledButton
       disabled={disabled}
       onClick={(e) => {
-        calculateExchange();
         e.preventDefault();
+        calculateExchange();
       }}
     >
       {children}

@@ -17,7 +17,7 @@ const Container = styled.div`
     max-width: 1100px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    margin-top: 100px;
 
     .tab-wrapper {
       display: flex;

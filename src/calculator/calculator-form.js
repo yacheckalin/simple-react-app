@@ -1,12 +1,13 @@
 import React from "react";
 import styled from "styled-components";
 
-import Button from "./calculator-form-button";
 import { useCurrencyContext } from "../currency/currency-context-provider";
 
+import Button from "./calculator-form-button";
+import Select from "./calculator-form-select";
+
 const Form = styled.form`
-  input,
-  select {
+  input {
     max-width: 98px;
     width: 100%;
     border-radius: 10px;
@@ -29,8 +30,8 @@ const CalculatorForm = () => {
     exchangeTwo,
     exchangeAmount,
     setExchangeAmount,
-    setExchangeTwo,
     validateExchangeOne,
+    validateExchangeTwo,
   } = useCurrencyContext();
 
   return (
@@ -40,26 +41,16 @@ const CalculatorForm = () => {
         value={exchangeAmount}
         onChange={(e) => setExchangeAmount(parseFloat(e.target.value))}
       />
-      <select
-        defaultValue={exchangeOne}
-        onChange={(e) => validateExchangeOne(e.target.value)}
-      >
-        {currencyListOne.map((item, index) => (
-          <option key={index} value={item}>
-            {item}
-          </option>
-        ))}
-      </select>
-      <select
-        defaultValue={exchangeTwo}
-        onChange={(e) => setExchangeTwo(e.target.value)}
-      >
-        {currencyListTwo.map((item, index) => (
-          <option key={index} value={item}>
-            {item}
-          </option>
-        ))}
-      </select>
+      <Select
+        defaultValue={exchangeOne[0]}
+        optionsList={currencyListOne}
+        onChangeHandler={validateExchangeOne}
+      />
+      <Select
+        defaultValue={exchangeTwo[0]}
+        optionsList={currencyListTwo}
+        onChangeHandler={validateExchangeTwo}
+      />
       <Button disabled={!exchangeAmount ? true : false}>Расчитать</Button>
     </Form>
   );
