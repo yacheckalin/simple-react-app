@@ -16,6 +16,8 @@ div#root {
   justify-content: center;
   align-items: center;
   height: 100%;
+  background: #e1e1e1;
+  flex-direction: column-reverse;
 }
 .grid-container {
   display: flex;

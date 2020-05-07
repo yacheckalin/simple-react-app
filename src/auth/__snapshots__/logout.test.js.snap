@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Logout /> displays and renders properly 1`] = `
+<styled.div>
+  <button
+    id="logout"
+    onClick={[Function]}
+  >
+    Выход
+  </button>
+</styled.div>
+`;
