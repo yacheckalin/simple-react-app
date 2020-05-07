@@ -6,11 +6,11 @@ import { useCurrencyContext } from "./currency-context-provider";
 const Table = styled.table`
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
-  border-top-right-radius: 10px;
   border-spacing: 0;
   background-color: white;
   max-width: 750px;
   overflow: hidden;
+  border-top-right-radius: 10px;
   width: 100%;
 
   thead {

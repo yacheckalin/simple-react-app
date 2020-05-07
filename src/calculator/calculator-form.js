@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { useCurrencyContext } from "../currency/currency-context-provider";
 
 import Button from "./calculator-form-button";
-import Select from "./calculator-form-select";
+import FormSelect from "./calculator-form-select";
 
 const Form = styled.form`
   input {
@@ -41,12 +41,12 @@ const CalculatorForm = () => {
         value={exchangeAmount}
         onChange={(e) => setExchangeAmount(parseFloat(e.target.value))}
       />
-      <Select
+      <FormSelect
         defaultValue={exchangeOne[0]}
         optionsList={currencyListOne}
         onChangeHandler={validateExchangeOne}
       />
-      <Select
+      <FormSelect
         defaultValue={exchangeTwo[0]}
         optionsList={currencyListTwo}
         onChangeHandler={validateExchangeTwo}

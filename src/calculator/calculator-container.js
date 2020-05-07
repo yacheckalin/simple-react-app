@@ -7,10 +7,8 @@ import { useCurrencyContext } from "../currency/currency-context-provider";
 const StyledContainer = styled.div`
   background-color: #e1e1e1;
   width: 760px;
-  border-top-right-radius: 20px;
-  border-bottom-right-radius: 20px;
-  border-bottom-left-radius: 20px;
-  overflow: hidden;
+
+  /* overflow: hidden; */
   .calc-header {
     display: flex;
     background-color: #1a237e;
@@ -19,10 +17,13 @@ const StyledContainer = styled.div`
     font-size: 18px;
     font-weight: 300;
     padding: 20px 50px;
+    border-top-right-radius: 20px;
   }
 
   .calc-body {
     background-color: white;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
   }
   .calc-body p {
     margin: 0;
