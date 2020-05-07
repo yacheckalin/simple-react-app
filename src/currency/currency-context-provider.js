@@ -141,8 +141,10 @@ const CurrencyContextProvider = ({ children }) => {
       return item;
     });
 
-    setCurrencyListTwo([...listTwo]);
     setExchangeOne([value, { disabled: false }]);
+    setExchangeTwo(listTwo[listTwo.findIndex(([, prop]) => !prop.disabled)]);
+
+    setCurrencyListTwo([...listTwo]);
   };
 
   const validateExchangeTwo = (value) =>
