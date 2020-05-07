@@ -36,7 +36,26 @@ exports[`<CurrencyContainer /> displays and renders properly 1`] = `
         1.12
       </td>
       <td>
-        May 07, 2020
+        <t
+          ago={false}
+          calendar={false}
+          decimal={false}
+          element={null}
+          filter={[Function]}
+          format="YYYY-MM-DD"
+          fromNow={false}
+          interval={60000}
+          local={false}
+          onChange={[Function]}
+          titleFormat=""
+          toNow={false}
+          unit={null}
+          unix={false}
+          utc={false}
+          withTitle={false}
+        >
+          May 08, 2020
+        </t>
       </td>
       <td>
          
@@ -56,7 +75,26 @@ exports[`<CurrencyContainer /> displays and renders properly 1`] = `
         107.95
       </td>
       <td>
-        May 07, 2020
+        <t
+          ago={false}
+          calendar={false}
+          decimal={false}
+          element={null}
+          filter={[Function]}
+          format="YYYY-MM-DD"
+          fromNow={false}
+          interval={60000}
+          local={false}
+          onChange={[Function]}
+          titleFormat=""
+          toNow={false}
+          unit={null}
+          unix={false}
+          utc={false}
+          withTitle={false}
+        >
+          May 08, 2020
+        </t>
       </td>
       <td>
          
@@ -76,7 +114,26 @@ exports[`<CurrencyContainer /> displays and renders properly 1`] = `
         1.238
       </td>
       <td>
-        May 07, 2020
+        <t
+          ago={false}
+          calendar={false}
+          decimal={false}
+          element={null}
+          filter={[Function]}
+          format="YYYY-MM-DD"
+          fromNow={false}
+          interval={60000}
+          local={false}
+          onChange={[Function]}
+          titleFormat=""
+          toNow={false}
+          unit={null}
+          unix={false}
+          utc={false}
+          withTitle={false}
+        >
+          May 08, 2020
+        </t>
       </td>
       <td>
          
@@ -96,7 +153,26 @@ exports[`<CurrencyContainer /> displays and renders properly 1`] = `
         0.7048
       </td>
       <td>
-        May 07, 2020
+        <t
+          ago={false}
+          calendar={false}
+          decimal={false}
+          element={null}
+          filter={[Function]}
+          format="YYYY-MM-DD"
+          fromNow={false}
+          interval={60000}
+          local={false}
+          onChange={[Function]}
+          titleFormat=""
+          toNow={false}
+          unit={null}
+          unix={false}
+          utc={false}
+          withTitle={false}
+        >
+          May 08, 2020
+        </t>
       </td>
       <td>
          
@@ -116,7 +192,26 @@ exports[`<CurrencyContainer /> displays and renders properly 1`] = `
         0.9888
       </td>
       <td>
-        May 07, 2020
+        <t
+          ago={false}
+          calendar={false}
+          decimal={false}
+          element={null}
+          filter={[Function]}
+          format="YYYY-MM-DD"
+          fromNow={false}
+          interval={60000}
+          local={false}
+          onChange={[Function]}
+          titleFormat=""
+          toNow={false}
+          unit={null}
+          unix={false}
+          utc={false}
+          withTitle={false}
+        >
+          May 08, 2020
+        </t>
       </td>
       <td>
          
@@ -136,7 +231,26 @@ exports[`<CurrencyContainer /> displays and renders properly 1`] = `
         1.31
       </td>
       <td>
-        May 07, 2020
+        <t
+          ago={false}
+          calendar={false}
+          decimal={false}
+          element={null}
+          filter={[Function]}
+          format="YYYY-MM-DD"
+          fromNow={false}
+          interval={60000}
+          local={false}
+          onChange={[Function]}
+          titleFormat=""
+          toNow={false}
+          unit={null}
+          unix={false}
+          utc={false}
+          withTitle={false}
+        >
+          May 08, 2020
+        </t>
       </td>
       <td>
          

@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 import { useCurrencyContext } from "./currency-context-provider";
+import Moment from "react-moment";
 
 const Table = styled.table`
   border-bottom-left-radius: 10px;
@@ -73,7 +74,9 @@ const CurrencyContainer = () => {
             <td>{!favorite ? <EmptyStar /> : <FullfilledStar />}</td>
             <td>{asset}</td>
             <td>{quote}</td>
-            <td>{date}</td>
+            <td>
+              <Moment format={"YYYY-MM-DD"}>{date}</Moment>
+            </td>
             <td>&nbsp;</td>
           </tr>
         ))}

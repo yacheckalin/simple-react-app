@@ -5,6 +5,8 @@ import CurrencyContainer from "./currency";
 import CurrencyContextProvider from "./currency/currency-context-provider";
 
 import CalculatorContainer from "./calculator";
+import HistoryContainer from "./history";
+import HistoryContextProvider from "./history/history-context-provider";
 
 const Container = styled.div`
   display: flex;
@@ -92,6 +94,11 @@ const TabsContainer = () => {
         <CurrencyContextProvider>
           {tabName === "currency" && <CurrencyContainer />}
           {tabName === "calculator" && <CalculatorContainer />}
+          {tabName === "history" && (
+            <HistoryContextProvider>
+              <HistoryContainer />
+            </HistoryContextProvider>
+          )}
         </CurrencyContextProvider>
       </div>
     </Container>
