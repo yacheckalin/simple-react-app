@@ -1,7 +1,5 @@
 import React, { useContext, useState, useEffect } from "react";
 
-import _ from "lodash";
-
 import { data } from "./data";
 import { INITIAL_PAGINATION_PAGE, DEFAULT_PAGINATION_LIMIT } from "./constants";
 import { customSort } from "./helpers";
