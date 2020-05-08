@@ -1,13 +1,11 @@
 <p>
-<img src="./src/assets/login_snapshot.png" />
-</p>
-<p>
-<img src="./src/assets/history_snapshot.png" />
-</p>
-<p>
 <img src="./src/assets/calculator_demo.gif" />
 </p>
 <p><img src="./src/assets/currency_demo.gif"/></p>
+<p>
+<img src="./src/assets/history_snapshot.png" />
+</p>
+
 #### Table of Contents
 
 - [Motivation](#motivation)
@@ -18,14 +16,15 @@
 
 #### Motivation
 
-This is a demo SPA. It was created to share ideas around using
+This is a demo SPA.
+It was created to share ideas around using
 
-- using Context API as a state management
-- using React hooks
+- Context API as a state management
+- React hooks
 
 in authontification and state management with one source of truth
 
-### Functionality
+#### Functionality
 
 - login form
 - logout
