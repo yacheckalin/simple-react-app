@@ -37,6 +37,7 @@ const CalculatorForm = () => {
   return (
     <Form>
       <input
+        id="exchangeAmount"
         type="text"
         value={exchangeAmount}
         onChange={(e) => {

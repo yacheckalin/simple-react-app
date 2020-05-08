@@ -3,6 +3,7 @@
 exports[`<CalculatorForm /> renders and displays properly 1`] = `
 <styled.form>
   <input
+    id="exchangeAmount"
     onChange={[Function]}
     type="text"
     value={0}
@@ -33,10 +34,10 @@ exports[`<CalculatorForm /> renders and displays properly 1`] = `
       ]
     }
   />
-  <Memo()
+  <Button
     disabled={true}
   >
     Расчитать
-  </Memo()>
+  </Button>
 </styled.form>
 `;
