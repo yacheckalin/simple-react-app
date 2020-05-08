@@ -1,4 +1,5 @@
 import React, { useState, useContext } from "react";
+import { auth } from "./helpers";
 
 const context = {
   isAuthorised: false,
@@ -20,7 +21,10 @@ const AuthContextProvider = ({ children }) => {
 
   const login = ({ email: login, password }) => {
     //TODO: change for axios request
-    const response = Promise.resolve(successResponse);
+    let resp = auth({ email: login, password })
+      ? successResponse
+      : errorResponse;
+    const response = Promise.resolve(resp);
 
     response.then((response) => {
       const res = JSON.parse(response);

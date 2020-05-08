@@ -10,3 +10,6 @@ export const isPasswordValid = (pass) => {
   if (!pass.match(/([a-zA-Z_]{7,})+?/is)) return false;
   return true;
 };
+
+export const auth = ({ email, password }) =>
+  email === "test@test.com" && password === "TestPassword_";
