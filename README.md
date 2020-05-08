@@ -66,7 +66,7 @@ MIT
 #### TECHNICAL DEBT
 
 - add multilanguage support (<code>EN | RU</code>)
-- add e2e test for currency (sorting by favorite case)
+- [] add e2e test for currency (sorting by favorite case)
 - add e2e test for currency (changin the star icon)
 - add e2e tests for calculator
 
