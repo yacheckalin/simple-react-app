@@ -52,17 +52,6 @@ const Table = styled.table`
   tr:last-child td {
     border: 0;
   }
-  tfoot {
-    td {
-      padding: 20px;
-      span {
-        text-decoration: none;
-        cursor: pointer;
-        color: #1a237e;
-        padding: 10px;
-      }
-    }
-  }
 `;
 
 const HistoryContainer = () => {

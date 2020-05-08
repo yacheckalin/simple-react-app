@@ -83,6 +83,7 @@ MIT
 - [*] fix markup on stretching (calculator)
 - [*] add icon to calculator identificator
 - [*] add icon to favorite
-- [] add icon to pagination
-- [] add validation to the calculation (only number calculatable)
+- [*] add icon to pagination
+- [*] add validation to the calculation (only number calculatable)
+- [] add propTypes
 - add constants to the initialValues (context, containers)
