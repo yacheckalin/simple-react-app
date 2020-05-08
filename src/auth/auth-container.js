@@ -3,7 +3,7 @@ import AuthForm from "./auth-form";
 import "./../styles.css";
 import { useAuthContext } from "./auth-context-provider";
 
-const AuthContainer = () => {
+const AuthContainer = React.memo(() => {
   const context = useAuthContext();
 
   return (
@@ -15,6 +15,6 @@ const AuthContainer = () => {
       )}
     </>
   );
-};
+});
 
 export default AuthContainer;

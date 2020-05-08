@@ -52,7 +52,7 @@ const Table = styled.table`
   }
 `;
 
-const CurrencyContainer = () => {
+const CurrencyContainer = React.memo(() => {
   const { data, setFavorite } = useCurrencyContext();
 
   return (
@@ -81,6 +81,6 @@ const CurrencyContainer = () => {
       </tbody>
     </Table>
   );
-};
+});
 
 export default CurrencyContainer;

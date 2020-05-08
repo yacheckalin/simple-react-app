@@ -16,7 +16,7 @@ const StyledButton = styled.button`
   }
 `;
 
-const Button = ({ disabled, children }) => {
+const Button = React.memo(({ disabled, children }) => {
   const { calculateExchange } = useCurrencyContext();
   return (
     <StyledButton
@@ -29,6 +29,6 @@ const Button = ({ disabled, children }) => {
       {children}
     </StyledButton>
   );
-};
+});
 
 export default Button;

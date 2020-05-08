@@ -23,7 +23,7 @@ const Style = styled.div`
   }
 `;
 
-const Pagination = () => {
+const Pagination = React.memo(() => {
   const { currentPage, totalPages, forward, backward } = useHistoryContext();
   return (
     <Style className="pagination-container">
@@ -42,6 +42,6 @@ const Pagination = () => {
       </div>
     </Style>
   );
-};
+});
 
 export default Pagination;

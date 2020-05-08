@@ -33,10 +33,10 @@ exports[`<CalculatorForm /> renders and displays properly 1`] = `
       ]
     }
   />
-  <Button
+  <Memo()
     disabled={true}
   >
     Расчитать
-  </Button>
+  </Memo()>
 </styled.form>
 `;

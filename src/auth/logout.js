@@ -23,7 +23,7 @@ const Style = styled.div`
   }
 `;
 
-const Logout = () => {
+const Logout = React.memo(() => {
   const { logout } = useAuthContext();
   return (
     <Style>
@@ -32,6 +32,6 @@ const Logout = () => {
       </button>
     </Style>
   );
-};
+});
 
 export default Logout;
