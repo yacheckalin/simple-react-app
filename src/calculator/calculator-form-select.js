@@ -1,6 +1,6 @@
 import React from "react";
-import Select from "react-select";
-
+import Select, { components } from "react-select";
+import { GoTriangleDown } from "react-icons/go";
 import styled from "styled-components";
 
 const Style = styled.div`
@@ -48,6 +48,10 @@ const FormSelect = React.memo(
         padding: 5,
         marginRight: 20,
       }),
+      dropdownIndicator: (provided, state) => ({
+        ...provided,
+        color: "#1a237e",
+      }),
       indicatorSeparator: (provided, state) => ({
         ...provided,
         display: "none",
@@ -71,9 +75,18 @@ const FormSelect = React.memo(
       }),
     };
 
+    const DropdownIndicator = (props) => {
+      return (
+        <components.DropdownIndicator {...props}>
+          <GoTriangleDown />
+        </components.DropdownIndicator>
+      );
+    };
+
     return (
       <Style>
         <Select
+          components={{ DropdownIndicator }}
           styles={customStyles}
           defaultValue={defaultValue}
           options={options}

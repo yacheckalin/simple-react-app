@@ -81,7 +81,8 @@ MIT
 - refactor <code>helpers</code> and decompose each sorting rule for independent helper method with unit tests
 - [*] add svg icons
 - [*] fix markup on stretching (calculator)
-- add icon to calculatro identificator
-- add icon to favorite
-- add icon to pagination
+- [*] add icon to calculator identificator
+- [*] add icon to favorite
+- [] add icon to pagination
+- [] add validation to the calculation (only number calculatable)
 - add constants to the initialValues (context, containers)
