@@ -13,6 +13,7 @@
 - [Installation](#installation-and-start-localy)
 - [Run Tests](#run-tests)
 - [Technical debt](#technical-debt)
+- [LICENCE](#licence)
 
 #### Motivation
 
@@ -56,6 +57,12 @@ yarn start
 yarn test
 ```
 
+#### LICENCE
+
+Copyright (c) 2020 yacheckalin
+
+MIT
+
 #### TECHNICAL DEBT
 
 - add multilanguage support (<code>EN | RU</code>)
@@ -72,3 +79,9 @@ yarn test
   - list sorts by the rules properly
   - pagination works properly
 - refactor <code>helpers</code> and decompose each sorting rule for independent helper method with unit tests
+- [*] add svg icons
+- [*] fix markup on stretching (calculator)
+- add icon to calculatro identificator
+- add icon to favorite
+- add icon to pagination
+- add constants to the initialValues (context, containers)

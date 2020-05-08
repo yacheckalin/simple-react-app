@@ -3,6 +3,7 @@ import styled from "styled-components";
 
 import { useCurrencyContext } from "./currency-context-provider";
 import Moment from "react-moment";
+import { BsStar, BsStarFill } from "react-icons/bs";
 
 const Table = styled.table`
   border-bottom-left-radius: 10px;
@@ -54,9 +55,6 @@ const Table = styled.table`
 const CurrencyContainer = () => {
   const { data, setFavorite } = useCurrencyContext();
 
-  const EmptyStar = () => <>&#9734;</>;
-  const FullfilledStar = () => <>&#9733;</>;
-
   return (
     <Table>
       <thead>
@@ -71,7 +69,7 @@ const CurrencyContainer = () => {
       <tbody>
         {data.map(({ favorite, asset, quote, date }, index) => (
           <tr key={index} onClick={(e) => setFavorite(index)}>
-            <td>{!favorite ? <EmptyStar /> : <FullfilledStar />}</td>
+            <td>{!favorite ? <BsStar /> : <BsStarFill />}</td>
             <td>{asset}</td>
             <td>{quote}</td>
             <td>
