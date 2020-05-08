@@ -1357,7 +1357,7 @@ exports[`<HistoryContainer /> renders and displays properly 1`] = `
       <td
         colSpan={8}
       >
-        <Memo() />
+        <Pagination />
       </td>
     </tr>
   </tfoot>
