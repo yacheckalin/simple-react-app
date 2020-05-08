@@ -78,9 +78,11 @@ MIT
   - [] calculatation returns right result
 
 - [] add e2e tests for history
+
   - [] list sorts by the rules properly
   - [] pagination works properly
-- [] refactor <code>helpers</code> and decompose each sorting rule for independent helper method with unit tests
+
+- [*] refactor <code>helpers</code> and decompose each sorting rule for independent helper method with unit tests
 - [*] add e2e for logout
 - [*] add svg icons
 - [*] fix markup on stretching (calculator)
