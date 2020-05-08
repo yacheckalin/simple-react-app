@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { isEmailValid, isPasswordValid } from "./helpers";
 import { useAuthContext } from "./auth-context-provider";
+import { IoIosArrowRoundForward } from "react-icons/io";
 
 import styled from "styled-components";
 
@@ -78,7 +79,7 @@ const FormFooter = styled.div`
 
   button {
     width: 165px;
-    height: 40px;
+    height: 45px;
     text-align: center;
     color: #f0f0f6;
     border-radius: 20px;
@@ -87,11 +88,17 @@ const FormFooter = styled.div`
     font-size: 18px;
     display: flex;
     justify-content: center;
-    flex-direction: row;
     margin: 0 auto;
     box-sizing: content-box;
+    align-items: center;
+
     span {
-      margin-left: 10px;
+      :first-child {
+        text-align: center;
+      }
+      :last-child {
+        margin-top: 3px;
+      }
     }
   }
   p {
@@ -172,7 +179,10 @@ const AuthForm = () => {
 
       <FormFooter>
         <button onClick={(e) => handleLogin(e)}>
-          Вход <span>&#8594;</span>
+          <span>Вход</span>
+          <span>
+            <IoIosArrowRoundForward size={`2em`} color={`white`} />
+          </span>
         </button>
         <p id="form-error">{loginError}</p>
       </FormFooter>

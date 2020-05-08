@@ -51,9 +51,14 @@ exports[`<AuthForm /> renders and displays properly 1`] = `
     <button
       onClick={[Function]}
     >
-      Вход 
       <span>
-        →
+        Вход
+      </span>
+      <span>
+        <IoIosArrowRoundForward
+          color="white"
+          size="2em"
+        />
       </span>
     </button>
     <p
