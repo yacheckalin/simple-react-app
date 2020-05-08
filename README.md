@@ -65,20 +65,23 @@ MIT
 
 #### TECHNICAL DEBT
 
-- add multilanguage support (<code>EN | RU</code>)
+- [] add multilanguage support (<code>EN | RU</code>)
+
 - [] add e2e test for currency (sorting by favorite case)
-- add e2e test for currency (changin the star icon)
-- add e2e tests for calculator
+- [] add e2e test for currency (changin the star icon)
 
-  - empty summ amount case
-  - disabled <code>Calculate</code> button
-  - when you change one currency from the opposite exchange list disabled all instead of existing ones
-  - calculatation returns right result
+- [] add e2e tests for calculator
 
-- add e2e tests for history
-  - list sorts by the rules properly
-  - pagination works properly
-- refactor <code>helpers</code> and decompose each sorting rule for independent helper method with unit tests
+  - [] empty summ amount case
+  - [] disabled <code>Calculate</code> button
+  - [] when you change one currency from the opposite exchange list disabled all instead of existing ones
+  - [] calculatation returns right result
+
+- [] add e2e tests for history
+  - [] list sorts by the rules properly
+  - [] pagination works properly
+- [] refactor <code>helpers</code> and decompose each sorting rule for independent helper method with unit tests
+- [*] add e2e for logout
 - [*] add svg icons
 - [*] fix markup on stretching (calculator)
 - [*] add icon to calculator identificator
