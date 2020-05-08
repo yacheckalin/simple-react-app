@@ -1,16 +1,23 @@
 import React, { useContext, useState, useEffect } from "react";
 
 import { data } from "./data";
-import { INITIAL_PAGINATION_PAGE, DEFAULT_PAGINATION_LIMIT } from "./constants";
+
+import {
+  INITIAL_PAGINATION_PAGE,
+  DEFAULT_PAGINATION_LIMIT,
+  INITIAL_PAGINATION_LIST,
+  DEFAULT_TOTAL_PAGES,
+} from "./constants";
+
 import { customSort } from "./helpers";
 
 export const HistoryContext = React.createContext();
 export const useHistoryContext = () => useContext(HistoryContext);
 
 const HistoryContextProvider = ({ children }) => {
-  const [paginationList, setPaginationList] = useState([]);
+  const [paginationList, setPaginationList] = useState(INITIAL_PAGINATION_LIST);
   const [currentPage, setCurrentPage] = useState(INITIAL_PAGINATION_PAGE);
-  const [totalPages, setTotalPages] = useState(0);
+  const [totalPages, setTotalPages] = useState(DEFAULT_TOTAL_PAGES);
 
   useEffect(() => {
     //TODO: change this part for axios request to API
@@ -29,10 +36,10 @@ const HistoryContextProvider = ({ children }) => {
       if (response.result === "ok") {
         const sorted = customSort(response.deals, currentPage);
         paginated = paginate(sorted);
+
         setTotalPages(
           Math.floor(response.deals.length / DEFAULT_PAGINATION_LIMIT)
         );
-
         setPaginationList(paginated);
       }
     });

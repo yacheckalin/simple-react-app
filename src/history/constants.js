@@ -1,2 +1,4 @@
 export const DEFAULT_PAGINATION_LIMIT = 10;
+export const DEFAULT_TOTAL_PAGES = 0;
 export const INITIAL_PAGINATION_PAGE = 0;
+export const INITIAL_PAGINATION_LIST = [];
