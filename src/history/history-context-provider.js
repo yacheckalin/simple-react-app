@@ -8,9 +8,6 @@ export const HistoryContext = React.createContext();
 export const useHistoryContext = () => useContext(HistoryContext);
 
 const HistoryContextProvider = ({ children }) => {
-  const [initialData, setInitialData] = useState([]);
-  const [sortedData, setSortedData] = useState([]);
-
   const [paginationList, setPaginationList] = useState([]);
   const [currentPage, setCurrentPage] = useState(INITIAL_PAGINATION_PAGE);
   const [totalPages, setTotalPages] = useState(0);
@@ -35,8 +32,7 @@ const HistoryContextProvider = ({ children }) => {
         setTotalPages(
           Math.floor(response.deals.length / DEFAULT_PAGINATION_LIMIT)
         );
-        setInitialData(response.deals);
-        setSortedData(sorted);
+
         setPaginationList(paginated);
       }
     });

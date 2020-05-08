@@ -6,7 +6,7 @@ import { useAuthContext } from "./auth-context-provider";
 const Style = styled.div`
   display: flex;
   align-self: flex-end;
-  margin: 50px 110px 50px 0;
+  margin: 50px 100px 0 0;
   button {
     padding: 10px 30px;
     width: 150px;

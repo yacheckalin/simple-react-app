@@ -5,10 +5,8 @@ import CalculatorFrom from "./calculator-form";
 import { useCurrencyContext } from "../currency/currency-context-provider";
 
 const StyledContainer = styled.div`
-  background-color: #e1e1e1;
   width: 760px;
 
-  /* overflow: hidden; */
   .calc-header {
     display: flex;
     background-color: #1a237e;

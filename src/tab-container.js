@@ -12,7 +12,6 @@ const Container = styled.div`
   display: flex;
   width: 100%;
   height: 100%;
-  background: #e1e1e1;
   justify-content: center;
 
   .stretcher {

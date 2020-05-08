@@ -10,8 +10,8 @@ const App = () => {
     <AuthContextProvider>
       <AuthContainer />
       <Authorized>
-        <TabsContainer />
         <Logout />
+        <TabsContainer />
       </Authorized>
     </AuthContextProvider>
   );

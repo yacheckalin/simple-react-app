@@ -4,7 +4,7 @@ import styled from "styled-components";
 import Moment from "react-moment";
 
 import { useHistoryContext } from "./history-context-provider";
-import Pagination from './history-paginator';
+import Pagination from "./history-paginator";
 
 const Table = styled.table`
   border-bottom-left-radius: 10px;
@@ -16,6 +16,7 @@ const Table = styled.table`
   width: 100%;
   font-family: "Open Sans", sans-serif;
   font-size: 18px;
+  margin-bottom: 70px;
 
   thead {
     background-color: #1a237e;
