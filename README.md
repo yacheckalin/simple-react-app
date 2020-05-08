@@ -1,30 +1,75 @@
-## simple-react-app
+<p>
+<img src="./src/assets/login_snapshot.png" />
+</p>
+<p>
+<img src="./src/assets/history_snapshot.png" />
+</p>
+<p>
+<img src="./src/assets/calculator_demo.gif" />
+</p>
+<p><img src="./src/assets/currency_demo.gif"/></p>
+#### Table of Contents
 
-Simple SPA based on React
+- [Motivation](#motivation)
+- [Functionality](#functionality)
+- [Installation](#installation-and-start-localy)
+- [Run Tests](#run-tests)
+- [Technical debt](#technical-debt)
 
-[LIVE DEMO HERE](https://yacheckalin.github.io/simple-react-app/)
+#### Motivation
 
-## Available Scripts
+This is a demo SPA. It was created to share ideas around using
 
-In the project directory, you can run:
+- using Context API as a state management
+- using React hooks
 
-### `yarn start`
+in authontification and state management with one source of truth
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Functionality
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+- login form
+- logout
+- authorized components
+- currency exchange list with sorting/marking as favorite
+- currency exchange calculator (for existing pairs in a list)
+- history tab with paggination and sorting
 
-### `yarn test`
+> [SORTED RULES]
+>
+> - 10 elements per page
+> - not more then 2 identical deals
+> - at least one deal with profit over \$100
+> - not more then 2 loss deals (x < 0)
+> - all deals sorted by finishDate (by descending)
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+[>>> LIVE DEMO HERE <<<](https://yacheckalin.github.io/simple-react-app/)
 
-### `yarn build`
+#### Installation and start localy
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```javascript
+yarn install
+yarn start
+```
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+#### Run tests
+
+```javascript
+yarn test
+```
+
+#### TECHNICAL DEBT
+
+- add multilanguage support (<code>EN | RU</code>)
+- add e2e test for currency (sorting by favorite case)
+- add e2e test for currency (changin the star icon)
+- add e2e tests for calculator
+
+  - empty summ amount case
+  - disabled <code>Calculate</code> button
+  - when you change one currency from the opposite exchange list disabled all instead of existing ones
+  - calculatation returns right result
+
+- add e2e tests for history
+  - list sorts by the rules properly
+  - pagination works properly
+- refactor <code>helpers</code> and decompose each sorting rule for independent helper method with unit tests
