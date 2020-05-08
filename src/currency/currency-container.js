@@ -1,9 +1,11 @@
 import React from "react";
+import Moment from "react-moment";
+
 import styled from "styled-components";
 
 import { useCurrencyContext } from "./currency-context-provider";
-import Moment from "react-moment";
 import { BsStar, BsStarFill } from "react-icons/bs";
+import { SHORT_DATE_FORMAT } from "./constants";
 
 const Table = styled.table`
   border-bottom-left-radius: 10px;
@@ -73,7 +75,7 @@ const CurrencyContainer = React.memo(() => {
             <td>{asset}</td>
             <td>{quote}</td>
             <td>
-              <Moment format={"YYYY-MM-DD"}>{date}</Moment>
+              <Moment format={SHORT_DATE_FORMAT}>{date}</Moment>
             </td>
             <td>&nbsp;</td>
           </tr>

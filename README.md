@@ -87,5 +87,5 @@ MIT
 - [*] add validation to the calculation (only number calculatable)
 - [] add propTypes
 - [*] performance optimization (React.memo,etc ...)
-- [] add valid email for cridentials [test@test.com, TestPassword_]
+- [*] add valid email for cridentials [test@test.com, TestPassword_]
 - add constants to the initialValues (context, containers)
