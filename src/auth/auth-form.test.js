@@ -5,6 +5,8 @@ import toJSON from "enzyme-to-json";
 import AuthForm from "./auth-form";
 import * as AuthContext from "./auth-context-provider";
 
+import {VALID_LOGIN, VALID_PASSWORD} from './constants';
+
 describe("<AuthForm />", () => {
   test("renders and displays properly", () => {
     const wrapper = shallow(<AuthForm />);
@@ -122,10 +124,10 @@ describe("<AuthForm />", () => {
     const wrapper = shallow(<AuthForm />);
     wrapper
       .find("#email")
-      .simulate("change", { target: { value: "test@email.com" } });
+      .simulate("change", { target: { value: VALID_LOGIN } });
     wrapper
       .find("#password")
-      .simulate("change", { target: { value: "PasswordSecured" } });
+      .simulate("change", { target: { value: VALID_PASSWORD } });
     wrapper.find("button").simulate("click", { preventDefault: () => {} });
     expect(wrapper.find("#form-error").text()).toBe("");
   });

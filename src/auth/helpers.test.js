@@ -15,8 +15,8 @@ describe("helpers", () => {
   });
   test("isPasswordValid returns false", () => {
     expect(isPasswordValid("aaaa")).toBeFalsy();
-    expect(isPasswordValid("aaaaAA2")).toBeFalsy();
-    expect(isPasswordValid("aaaaAAA222")).toBeFalsy();
+    expect(isPasswordValid("aaaaA2}")).toBeFalsy();
+    expect(isPasswordValid("aaA222")).toBeFalsy();
   });
   test("auth returns true", () => {
     expect(auth({ email: "test@test.com", password: "TestPassword_" }));
