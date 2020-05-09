@@ -7,7 +7,7 @@ exports[`<CalculatorContainer /> renders and displays properly 1`] = `
   <div
     className="calc-header"
   >
-    Конвертация валют
+    calculator.header
   </div>
   <div
     className="calc-body"
@@ -16,7 +16,7 @@ exports[`<CalculatorContainer /> renders and displays properly 1`] = `
       className="calc-row"
     >
       <p>
-        Сумма
+        calculator.title.amount
       </p>
       <CalculatorForm />
     </div>
@@ -24,7 +24,7 @@ exports[`<CalculatorContainer /> renders and displays properly 1`] = `
       className="calc-row"
     >
       <p>
-        Итого
+        calculator.title.total
       </p>
       <p
         className="calc-result"

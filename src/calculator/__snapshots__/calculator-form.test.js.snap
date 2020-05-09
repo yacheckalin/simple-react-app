@@ -37,7 +37,7 @@ exports[`<CalculatorForm /> renders and displays properly 1`] = `
   <Button
     disabled={true}
   >
-    Расчитать
+    calculator.calculate
   </Button>
 </styled.form>
 `;

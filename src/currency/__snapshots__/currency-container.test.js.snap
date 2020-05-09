@@ -8,13 +8,13 @@ exports[`<CurrencyContainer /> displays and renders properly 1`] = `
          
       </th>
       <th>
-        Валютная Пара
+        currency.title
       </th>
       <th>
-        Катировка
+        currency.quotation
       </th>
       <th>
-        Дата Получения
+        currency.date
       </th>
       <th>
          

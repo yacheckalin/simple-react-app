@@ -2,10 +2,17 @@
 
 exports[`<AuthContainer /> renders and displays properly 1`] = `
 <Fragment>
-  <div
-    className="grid-container"
+  <Suspense
+    fallback="loading"
   >
-    <AuthForm />
-  </div>
+    <div
+      className="grid-container"
+    >
+      <styled.div>
+        <Language />
+      </styled.div>
+      <AuthForm />
+    </div>
+  </Suspense>
 </Fragment>
 `;

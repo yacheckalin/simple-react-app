@@ -6,7 +6,7 @@ exports[`<Logout /> displays and renders properly 1`] = `
     id="logout"
     onClick={[Function]}
   >
-    Выход
+    login.exit
   </button>
 </styled.div>
 `;

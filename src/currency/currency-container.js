@@ -7,6 +7,8 @@ import { useCurrencyContext } from "./currency-context-provider";
 import { BsStar, BsStarFill } from "react-icons/bs";
 import { SHORT_DATE_FORMAT } from "./constants";
 
+import { useTranslation } from "react-i18next";
+
 const Table = styled.table`
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
@@ -56,15 +58,16 @@ const Table = styled.table`
 
 const CurrencyContainer = React.memo(() => {
   const { data, setFavorite } = useCurrencyContext();
+  const { t } = useTranslation("common");
 
   return (
     <Table>
       <thead>
         <tr>
           <th>&nbsp;</th>
-          <th>Валютная Пара</th>
-          <th>Катировка</th>
-          <th>Дата Получения</th>
+          <th>{t("currency.title")}</th>
+          <th>{t("currency.quotation")}</th>
+          <th>{t("currency.date")}</th>
           <th>&nbsp;</th>
         </tr>
       </thead>

@@ -6,6 +6,8 @@ import { useCurrencyContext } from "../currency/currency-context-provider";
 import Button from "./calculator-form-button";
 import FormSelect from "./calculator-form-select";
 
+import { useTranslation } from "react-i18next";
+
 const Form = styled.form`
   input {
     max-width: 98px;
@@ -34,6 +36,8 @@ const CalculatorForm = () => {
     validateExchangeTwo,
   } = useCurrencyContext();
 
+  const { t } = useTranslation();
+
   return (
     <Form>
       <input
@@ -56,7 +60,9 @@ const CalculatorForm = () => {
         optionsList={currencyListTwo}
         onChangeHandler={({ value }) => validateExchangeTwo(value)}
       />
-      <Button disabled={!exchangeAmount ? true : false}>Расчитать</Button>
+      <Button disabled={!exchangeAmount ? true : false}>
+        {t("calculator.calculate")}
+      </Button>
     </Form>
   );
 };
