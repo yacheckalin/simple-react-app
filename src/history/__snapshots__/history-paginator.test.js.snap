@@ -1,17 +1,28 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Pagination /> renders and displays properly 1`] = `
-<div
+<styled.div
   className="pagination-container"
 >
-   
-  1
-   / 
-  10
-  <span
+  <div
+    className="arrow-backward"
+    onClick={[MockFunction]}
+  />
+  <div
+    className="numbers"
+  >
+    1
+     / 
+    10
+  </div>
+  <div
+    className="arrow-forward"
     onClick={[MockFunction]}
   >
-    →
-  </span>
-</div>
+    <IoIosArrowRoundForward
+      color="#1a237e"
+      size="2em"
+    />
+  </div>
+</styled.div>
 `;

@@ -3,6 +3,17 @@ import React, { useContext, useState, useEffect } from "react";
 import { getExchangeRate } from "../calculator/helpers";
 import { currencyData } from "./data";
 
+import {
+  DEFAULT_EXCHANGE_TWO_VALUE,
+  DEFAULT_EXCHANGE_ONE_VALUE,
+  DEFAULT_EXCHANGE_AMOUNT,
+  DEFAULT_EXCHANGE_SUMMARY,
+  DEFAULT_CURRENCY_LIST_ONE,
+  DEFAULT_CURRENCY_LIST_TWO,
+  DEFAULT_CURRENCY_LIST,
+  DEFAULT_CURRENCY_LIST_DATA,
+} from "./constants";
+
 export const CurrencyContext = React.createContext({ currencyList: [] });
 export const useCurrencyContext = () => useContext(CurrencyContext);
 
@@ -11,14 +22,22 @@ let currencyListSetData = new Set();
 
 const CurrencyContextProvider = ({ children }) => {
   const [data, setData] = useState(currencyData);
-  const [currencyList, setCurrencyList] = useState([]);
-  const [currencyListData, setCurrencyListData] = useState([]);
-  const [currencyListOne, setCurrencyListOne] = useState([]);
-  const [currencyListTwo, setCurrencyListTwo] = useState([]);
-  const [exchangeSummary, setExchangeSummary] = useState(null);
-  const [exchangeAmount, setExchangeAmount] = useState(0);
-  const [exchangeOne, setExchangeOne] = useState(["USD", { disabled: false }]);
-  const [exchangeTwo, setExchangeTwo] = useState(["USD", { disabled: false }]);
+  const [currencyList, setCurrencyList] = useState(DEFAULT_CURRENCY_LIST);
+  const [currencyListData, setCurrencyListData] = useState(
+    DEFAULT_CURRENCY_LIST_DATA
+  );
+  const [currencyListOne, setCurrencyListOne] = useState(
+    DEFAULT_CURRENCY_LIST_ONE
+  );
+  const [currencyListTwo, setCurrencyListTwo] = useState(
+    DEFAULT_CURRENCY_LIST_TWO
+  );
+  const [exchangeSummary, setExchangeSummary] = useState(
+    DEFAULT_EXCHANGE_SUMMARY
+  );
+  const [exchangeAmount, setExchangeAmount] = useState(DEFAULT_EXCHANGE_AMOUNT);
+  const [exchangeOne, setExchangeOne] = useState(DEFAULT_EXCHANGE_ONE_VALUE);
+  const [exchangeTwo, setExchangeTwo] = useState(DEFAULT_EXCHANGE_TWO_VALUE);
 
   useEffect(() => {
     currencyData.forEach(({ asset, quote }) => {

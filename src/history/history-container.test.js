@@ -1,5 +1,5 @@
 import React from "react";
-import { shallow } from "enzyme";
+import { shallow, mount, render } from "enzyme";
 import toJSON from "enzyme-to-json";
 
 import HistoryContainer from "./history-container";
@@ -16,5 +16,6 @@ describe("<HistoryContainer />", () => {
       .mockImplementation(() => contextValues);
     const wrapper = shallow(<HistoryContainer />);
     expect(toJSON(wrapper)).toMatchSnapshot();
+    wrapper.unmount();
   });
 });

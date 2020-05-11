@@ -37,9 +37,14 @@ const CalculatorForm = () => {
   return (
     <Form>
       <input
+        id="exchangeAmount"
         type="text"
         value={exchangeAmount}
-        onChange={(e) => setExchangeAmount(parseFloat(e.target.value))}
+        onChange={(e) => {
+          if (!isNaN(parseFloat(e.target.value))) {
+            setExchangeAmount(parseFloat(e.target.value));
+          }
+        }}
       />
       <FormSelect
         defaultValue={exchangeOne[0]}

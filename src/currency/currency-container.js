@@ -1,8 +1,11 @@
 import React from "react";
+import Moment from "react-moment";
+
 import styled from "styled-components";
 
 import { useCurrencyContext } from "./currency-context-provider";
-import Moment from "react-moment";
+import { BsStar, BsStarFill } from "react-icons/bs";
+import { SHORT_DATE_FORMAT } from "./constants";
 
 const Table = styled.table`
   border-bottom-left-radius: 10px;
@@ -51,11 +54,8 @@ const Table = styled.table`
   }
 `;
 
-const CurrencyContainer = () => {
+const CurrencyContainer = React.memo(() => {
   const { data, setFavorite } = useCurrencyContext();
-
-  const EmptyStar = () => <>&#9734;</>;
-  const FullfilledStar = () => <>&#9733;</>;
 
   return (
     <Table>
@@ -71,11 +71,11 @@ const CurrencyContainer = () => {
       <tbody>
         {data.map(({ favorite, asset, quote, date }, index) => (
           <tr key={index} onClick={(e) => setFavorite(index)}>
-            <td>{!favorite ? <EmptyStar /> : <FullfilledStar />}</td>
+            <td>{!favorite ? <BsStar /> : <BsStarFill />}</td>
             <td>{asset}</td>
             <td>{quote}</td>
             <td>
-              <Moment format={"YYYY-MM-DD"}>{date}</Moment>
+              <Moment format={SHORT_DATE_FORMAT}>{date}</Moment>
             </td>
             <td>&nbsp;</td>
           </tr>
@@ -83,6 +83,6 @@ const CurrencyContainer = () => {
       </tbody>
     </Table>
   );
-};
+});
 
 export default CurrencyContainer;

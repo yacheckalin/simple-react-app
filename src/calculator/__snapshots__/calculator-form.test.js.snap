@@ -3,6 +3,7 @@
 exports[`<CalculatorForm /> renders and displays properly 1`] = `
 <styled.form>
   <input
+    id="exchangeAmount"
     onChange={[Function]}
     type="text"
     value={0}

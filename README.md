@@ -13,6 +13,7 @@
 - [Installation](#installation-and-start-localy)
 - [Run Tests](#run-tests)
 - [Technical debt](#technical-debt)
+- [LICENCE](#licence)
 
 #### Motivation
 
@@ -56,19 +57,39 @@ yarn start
 yarn test
 ```
 
+#### LICENCE
+
+Copyright (c) 2020 yacheckalin
+
+MIT
+
 #### TECHNICAL DEBT
 
-- add multilanguage support (<code>EN | RU</code>)
-- add e2e test for currency (sorting by favorite case)
-- add e2e test for currency (changin the star icon)
-- add e2e tests for calculator
+- [] add multilanguage support (<code>EN | RU</code>)
 
-  - empty summ amount case
-  - disabled <code>Calculate</code> button
-  - when you change one currency from the opposite exchange list disabled all instead of existing ones
-  - calculatation returns right result
+- [] add e2e test for currency (sorting by favorite case)
+- [] add e2e test for currency (changin the star icon)
 
-- add e2e tests for history
-  - list sorts by the rules properly
-  - pagination works properly
-- refactor <code>helpers</code> and decompose each sorting rule for independent helper method with unit tests
+- [] add e2e tests for calculator
+
+  - [] empty summ amount case
+  - [] disabled <code>Calculate</code> button
+  - [] when you change one currency from the opposite exchange list disabled all instead of existing ones
+  - [] calculatation returns right result
+
+- [] add e2e tests for history
+
+  - [] list sorts by the rules properly
+  - [] pagination works properly
+
+- [*] refactor <code>helpers</code> and decompose each sorting rule for independent helper method with unit tests
+- [*] add e2e for logout
+- [*] add svg icons
+- [*] fix markup on stretching (calculator)
+- [*] add icon to calculator identificator
+- [*] add icon to favorite
+- [*] add icon to pagination
+- [*] add validation to the calculation (only number calculatable)
+- [*] performance optimization (React.memo,etc ...)
+- [*] add valid email for cridentials [test@test.com, TestPassword_]
+- [*] add constants to the initialValues (context, containers)
