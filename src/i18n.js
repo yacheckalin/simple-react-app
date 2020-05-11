@@ -15,7 +15,6 @@ i18n
     defaultNS: ["common"],
     fallbackLng: ["ru", "en"],
     debug: true,
-    lng: "ru",
     interpolation: {
       escapeValue: false,
     },
