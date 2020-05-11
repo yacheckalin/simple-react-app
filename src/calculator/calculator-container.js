@@ -4,6 +4,8 @@ import styled from "styled-components";
 import CalculatorFrom from "./calculator-form";
 import { useCurrencyContext } from "../currency/currency-context-provider";
 
+import { useTranslation } from "react-i18next";
+
 const StyledContainer = styled.div`
   width: 760px;
 
@@ -44,17 +46,19 @@ const StyledContainer = styled.div`
 `;
 
 const CalculatorContainer = () => {
+  const { t } = useTranslation("common");
+
   const { exchangeSummary } = useCurrencyContext();
   return (
     <StyledContainer className="calc-container">
-      <div className="calc-header">Конвертация валют</div>
+      <div className="calc-header">{t("calculator.header")}</div>
       <div className="calc-body">
         <div className="calc-row">
-          <p>Сумма</p>
+          <p>{t("calculator.title.amount")}</p>
           <CalculatorFrom />
         </div>
         <div className="calc-row">
-          <p>Итого</p>
+          <p>{t("calculator.title.total")}</p>
           <p className="calc-result">{exchangeSummary}&nbsp;</p>
         </div>
       </div>

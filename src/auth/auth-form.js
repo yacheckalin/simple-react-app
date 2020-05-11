@@ -5,8 +5,10 @@ import { IoIosArrowRoundForward } from "react-icons/io";
 
 import styled from "styled-components";
 
+import { useTranslation } from "react-i18next";
+
 const FormContainer = styled.div`
-  margin: 0 auto;
+  margin: 300px auto;
   width: 480px;
   font-family: "Open Sans", sans-serif;
 `;
@@ -112,6 +114,8 @@ const FormFooter = styled.div`
 `;
 
 const AuthForm = () => {
+  const { t } = useTranslation("common");
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [emailValid, setEmailValid] = useState(true);
@@ -142,13 +146,13 @@ const AuthForm = () => {
   return (
     <FormContainer>
       <FormHeader>
-        <span>Вход в личный кабинет</span>
+        <span>{t("login.header")}</span>
       </FormHeader>
 
       <FormBody>
         <FormRow>
           <FormItem>
-            <p> Логин </p>
+            <p> {t("login.login")} </p>
             <input
               className={`form-input ${!emailValid && `error`}`}
               type="text"
@@ -156,13 +160,13 @@ const AuthForm = () => {
               onChange={(e) => handleEmail(e)}
               id="email"
             />
-            <p id="email-error">{!emailValid && "Неверный email"}&nbsp;</p>
+            <p id="email-error">{!emailValid && t("login.loginError")}&nbsp;</p>
           </FormItem>
         </FormRow>
 
         <FormRow>
           <FormItem>
-            <p> Пароль </p>
+            <p> {t("login.password")} </p>
             <input
               className={`form-input ${!passwordValid && `error`}`}
               type="password"
@@ -171,7 +175,7 @@ const AuthForm = () => {
               id="password"
             />
             <p id="password-error">
-              {!passwordValid && "Неверный пароль"}&nbsp;
+              {!passwordValid && t("login.passwordError")}&nbsp;
             </p>
           </FormItem>
         </FormRow>
@@ -179,12 +183,12 @@ const AuthForm = () => {
 
       <FormFooter>
         <button onClick={(e) => handleLogin(e)}>
-          <span>Вход</span>
+          <span>{t("login.enter")}</span>
           <span>
             <IoIosArrowRoundForward size={`2em`} color={`white`} />
           </span>
         </button>
-        <p id="form-error">{loginError}</p>
+        <p id="form-error">{t("login.formError", { message: loginError })}</p>
       </FormFooter>
     </FormContainer>
   );

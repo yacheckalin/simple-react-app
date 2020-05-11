@@ -1,0 +1,39 @@
+{
+  "login": {
+    "header": "Sing In",
+    "login": "Login",
+    "password": "Password",
+    "loginError": "Wrong email",
+    "passwordError": "Wrong password",
+    "formError": "{{message}}",
+    "enter": "Login",
+    "exit": "Logout"
+  },
+  "tabs": {
+    "currency": "Exchange Rates",
+    "calculator": "Calculator",
+    "history": "History"
+  },
+  "currency": {
+    "title": "Currency Pair",
+    "quotation": "Quotation",
+    "date": "Receipt Date"
+  },
+  "calculator": {
+    "header": "Currency conversion",
+    "title": {
+      "amount": "Amount",
+      "total": "Total"
+    },
+    "calculate": "Calculate"
+  },
+  "history": {
+    "title": {
+      "asset": "Asset",
+      "start": "Start Date",
+      "quotation": "Quotation",
+      "end": "End Date",
+      "profit": "Profit"
+    }
+  }
+}

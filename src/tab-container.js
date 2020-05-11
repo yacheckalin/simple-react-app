@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, Suspense } from "react";
 import styled from "styled-components";
 
 import CurrencyContainer from "./currency";
@@ -7,6 +7,8 @@ import CurrencyContextProvider from "./currency/currency-context-provider";
 import CalculatorContainer from "./calculator";
 import HistoryContainer from "./history";
 import HistoryContextProvider from "./history/history-context-provider";
+
+import { useTranslation } from "react-i18next";
 
 const Container = styled.div`
   display: flex;
@@ -57,50 +59,54 @@ const TabsContainer = () => {
   const [tabName, setTabName] = useState("currency");
   const [active, setActive] = useState([true, false, false]);
 
-  return (
-    <Container>
-      <div className="stretcher">
-        <div className="tab-wrapper">
-          <Tab
-            onClick={(e) => {
-              setTabName("currency");
-              setActive([1, 0, 0]);
-            }}
-            active={active[0]}
-          >
-            Курсы валют
-          </Tab>
-          <Tab
-            onClick={(e) => {
-              setTabName("calculator");
-              setActive([0, 1, 0]);
-            }}
-            active={active[1]}
-          >
-            Калькулятор
-          </Tab>
-          <Tab
-            onClick={(e) => {
-              setTabName("history");
-              setActive([0, 0, 1]);
-            }}
-            active={active[2]}
-          >
-            История
-          </Tab>
-        </div>
+  const { t } = useTranslation("common");
 
-        <CurrencyContextProvider>
-          {tabName === "currency" && <CurrencyContainer />}
-          {tabName === "calculator" && <CalculatorContainer />}
-          {tabName === "history" && (
-            <HistoryContextProvider>
-              <HistoryContainer />
-            </HistoryContextProvider>
-          )}
-        </CurrencyContextProvider>
-      </div>
-    </Container>
+  return (
+    <Suspense fallback="loading ...">
+      <Container>
+        <div className="stretcher">
+          <div className="tab-wrapper">
+            <Tab
+              onClick={(e) => {
+                setTabName("currency");
+                setActive([1, 0, 0]);
+              }}
+              active={active[0]}
+            >
+              {t("tabs.currency")}
+            </Tab>
+            <Tab
+              onClick={(e) => {
+                setTabName("calculator");
+                setActive([0, 1, 0]);
+              }}
+              active={active[1]}
+            >
+              {t("tabs.calculator")}
+            </Tab>
+            <Tab
+              onClick={(e) => {
+                setTabName("history");
+                setActive([0, 0, 1]);
+              }}
+              active={active[2]}
+            >
+              {t("tabs.history")}
+            </Tab>
+          </div>
+
+          <CurrencyContextProvider>
+            {tabName === "currency" && <CurrencyContainer />}
+            {tabName === "calculator" && <CalculatorContainer />}
+            {tabName === "history" && (
+              <HistoryContextProvider>
+                <HistoryContainer />
+              </HistoryContextProvider>
+            )}
+          </CurrencyContextProvider>
+        </div>
+      </Container>
+    </Suspense>
   );
 };
 

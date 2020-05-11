@@ -1,0 +1,39 @@
+{
+  "login": {
+    "header": "Вход в личный кабинет",
+    "login": "Логин",
+    "password": "Пароль",
+    "loginError": "Неверный email",
+    "passwordError": "Неверный пароль",
+    "formError": "{{message}}",
+    "enter": "Вход",
+    "exit": "Выход"
+  },
+  "tabs": {
+    "currency": "Курсы валют",
+    "calculator": "Калькулятор",
+    "history": "История"
+  },
+  "currency": {
+    "title": "Валютная Пара",
+    "quotation": "Котировка",
+    "date": "Дата Получения"
+  },
+  "calculator": {
+    "header": "Конвертация валют",
+    "title": {
+      "amount": "Сумма",
+      "total": "Итого"
+    },
+    "calculate": "Рассчитать"
+  },
+  "history": {
+    "title": {
+      "asset": "Актив",
+      "start": "Начало",
+      "quotation": "Котировка",
+      "end": "Конец",
+      "profit": "Прибыль"
+    }
+  }
+}

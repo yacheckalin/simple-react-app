@@ -31,7 +31,7 @@ describe("<AuthForm />", () => {
     wrapper.find("#email").simulate("change", { target: { value: "test" } });
     expect(wrapper.find("#email").hasClass("error")).toBeTruthy();
 
-    expect(wrapper.find("#email-error").text().trim()).toBe("Неверный email");
+    expect(wrapper.find("#email-error").text().trim()).toBe("login.loginError");
   });
 
   test("validate email", () => {
@@ -66,7 +66,7 @@ describe("<AuthForm />", () => {
     expect(wrapper.find("#password").hasClass("error")).toBeTruthy();
 
     expect(wrapper.find("#password-error").text().trim()).toBe(
-      "Неверный пароль"
+      "login.passwordError"
     );
   });
 
@@ -108,7 +108,7 @@ describe("<AuthForm />", () => {
       .find("#password")
       .simulate("change", { target: { value: "Passw_" } });
     wrapper.find("button").simulate("click", { preventDefault: () => {} });
-    expect(wrapper.find("#form-error").text()).toBe("Form Validation Error");
+    expect(wrapper.find("#form-error").text()).toBe("login.formError");
   });
   test("complete validation successfully complete", () => {
     const contextValues = {
@@ -129,6 +129,6 @@ describe("<AuthForm />", () => {
       .find("#password")
       .simulate("change", { target: { value: VALID_PASSWORD } });
     wrapper.find("button").simulate("click", { preventDefault: () => {} });
-    expect(wrapper.find("#form-error").text()).toBe("");
+    expect(wrapper.find("#form-error").text()).toBe("login.formError");
   });
 });

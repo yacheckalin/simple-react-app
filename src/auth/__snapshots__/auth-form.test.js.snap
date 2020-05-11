@@ -4,14 +4,16 @@ exports[`<AuthForm /> renders and displays properly 1`] = `
 <styled.div>
   <styled.div>
     <span>
-      Вход в личный кабинет
+      login.header
     </span>
   </styled.div>
   <styled.div>
     <styled.div>
       <styled.div>
         <p>
-           Логин 
+           
+          login.login
+           
         </p>
         <input
           className="form-input false"
@@ -30,7 +32,9 @@ exports[`<AuthForm /> renders and displays properly 1`] = `
     <styled.div>
       <styled.div>
         <p>
-           Пароль 
+           
+          login.password
+           
         </p>
         <input
           className="form-input false"
@@ -52,7 +56,7 @@ exports[`<AuthForm /> renders and displays properly 1`] = `
       onClick={[Function]}
     >
       <span>
-        Вход
+        login.enter
       </span>
       <span>
         <IoIosArrowRoundForward
@@ -63,7 +67,9 @@ exports[`<AuthForm /> renders and displays properly 1`] = `
     </button>
     <p
       id="form-error"
-    />
+    >
+      login.formError
+    </p>
   </styled.div>
 </styled.div>
 `;

@@ -8,22 +8,22 @@ exports[`<HistoryContainer /> renders and displays properly 1`] = `
          
       </th>
       <th>
-        Актив
+        history.title.asset
       </th>
       <th>
-        Начало
+        history.title.start
       </th>
       <th>
-        Котировка
+        history.title.quotation
       </th>
       <th>
-        Конец
+        history.title.end
       </th>
       <th>
-        Котировка
+        history.title.quotation
       </th>
       <th>
-        Прибыль
+        history.title.profit
       </th>
       <th>
          
