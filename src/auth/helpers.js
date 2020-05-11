@@ -1,3 +1,5 @@
+import { VALID_LOGIN, VALID_PASSWORD } from "./constants";
+
 export const isEmailValid = (email) => {
   const el = document.createElement("input");
   el.type = "email";
@@ -6,10 +8,9 @@ export const isEmailValid = (email) => {
 };
 
 export const isPasswordValid = (pass) => {
-  if (pass.match(/\d/is)) return false;
-  if (!pass.match(/([a-zA-Z_]{7,})+?/is)) return false;
+  if (!pass.match(/([0-9a-zA-Z_]{7,})+?/is)) return false;
   return true;
 };
 
 export const auth = ({ email, password }) =>
-  email === "test@test.com" && password === "TestPassword_";
+  email === VALID_LOGIN && password === VALID_PASSWORD;
