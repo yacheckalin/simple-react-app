@@ -44,6 +44,7 @@
   "author": "Yaroslav Chekalin <yaroslav.checkalin@gmail.com>",
   "license": "MIT",
   "devDependencies": {
+    "@rehooks/local-storage": "^2.4.0",
     "axios": "^0.19.2",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.2",

@@ -1,14 +1,15 @@
-import React, { useState, Suspense } from "react";
+import React, { useState, Suspense, useEffect } from "react";
 import styled from "styled-components";
 
-import CurrencyContainer from "./currency";
-import CurrencyContextProvider from "./currency/currency-context-provider";
+import CurrencyContainer from "../currency";
+import CurrencyContextProvider from "../currency/currency-context-provider";
 
-import CalculatorContainer from "./calculator";
-import HistoryContainer from "./history";
-import HistoryContextProvider from "./history/history-context-provider";
+import CalculatorContainer from "../calculator";
+import HistoryContainer from "../history";
+import HistoryContextProvider from "../history/history-context-provider";
 
 import { useTranslation } from "react-i18next";
+import { useLocalStorage, writeStorage } from "@rehooks/local-storage";
 
 const Container = styled.div`
   display: flex;
@@ -56,10 +57,21 @@ const Tab = styled.a`
 `;
 
 const TabsContainer = () => {
-  const [tabName, setTabName] = useState("currency");
-  const [active, setActive] = useState([true, false, false]);
+  const [currentTabName] = useLocalStorage("currentTabName");
+  const [activeTabHeader] = useLocalStorage("activeTabHeader");
+  const [tabName, setTabName] = useState(
+    currentTabName === undefined ? "currency" : currentTabName
+  );
+  const [active, setActive] = useState(
+    activeTabHeader === undefined ? [true, false, false] : activeTabHeader
+  );
 
   const { t } = useTranslation("common");
+
+  useEffect(() => {
+    writeStorage("currentTabName", tabName);
+    writeStorage("activeTabHeader", active);
+  }, [tabName, active]);
 
   return (
     <Suspense fallback="loading ...">

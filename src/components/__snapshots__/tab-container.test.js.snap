@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<TabsContainer /> displays and shows properly 1`] = `
+<Suspense
+  fallback="loading ..."
+>
+  <styled.div>
+    <div
+      className="stretcher"
+    >
+      <div
+        className="tab-wrapper"
+      >
+        <styled.a
+          active={true}
+          onClick={[Function]}
+        >
+          tabs.currency
+        </styled.a>
+        <styled.a
+          active={false}
+          onClick={[Function]}
+        >
+          tabs.calculator
+        </styled.a>
+        <styled.a
+          active={false}
+          onClick={[Function]}
+        >
+          tabs.history
+        </styled.a>
+      </div>
+      <CurrencyContextProvider>
+        <Memo() />
+      </CurrencyContextProvider>
+    </div>
+  </styled.div>
+</Suspense>
+`;

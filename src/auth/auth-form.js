@@ -8,7 +8,7 @@ import styled from "styled-components";
 import { useTranslation } from "react-i18next";
 
 const FormContainer = styled.div`
-  margin: 300px auto;
+  margin: 200px auto;
   width: 480px;
   font-family: "Open Sans", sans-serif;
 `;

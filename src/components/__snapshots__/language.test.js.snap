@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Language /> displays and shows properly 1`] = `
+<styled.div>
+  <button
+    onClick={[Function]}
+  >
+    EN
+  </button>
+  |
+  <button
+    onClick={[Function]}
+  >
+    RU
+  </button>
+</styled.div>
+`;

@@ -1,8 +1,11 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { auth } from "./helpers";
+import { useLocalStorage, writeStorage } from "@rehooks/local-storage";
+
+import { DEFAULT_IS_AUTHORISED } from "./constants";
 
 const context = {
-  isAuthorised: false,
+  isAuthorised: DEFAULT_IS_AUTHORISED,
 };
 
 export const AuthContext = React.createContext(context);
@@ -16,8 +19,15 @@ const errorResponse = JSON.stringify({
 const successResponse = JSON.stringify({ result: "ok" });
 
 const AuthContextProvider = ({ children }) => {
-  const [isAuthorised, setIsAuthorised] = useState(true);
+  const [isAuthorisedKey] = useLocalStorage("isAuthorisedKey");
+  const [isAuthorised, setIsAuthorised] = useState(
+    isAuthorisedKey === undefined ? DEFAULT_IS_AUTHORISED : isAuthorisedKey
+  );
   const [loginError, setLoginError] = useState("");
+
+  useEffect(() => {
+    writeStorage("isAuthorisedKey", isAuthorised);
+  }, [isAuthorised]);
 
   const login = ({ email: login, password }) => {
     //TODO: change for axios request
@@ -33,6 +43,7 @@ const AuthContextProvider = ({ children }) => {
         setIsAuthorised(false);
       } else {
         setIsAuthorised(true);
+        writeStorage("isAuthorisedKey", true);
       }
     });
   };
@@ -47,6 +58,7 @@ const AuthContextProvider = ({ children }) => {
       if (!res.error) {
         setLoginError("");
         setIsAuthorised(false);
+        writeStorage("isAuthorisedKey", false);
       }
     });
 

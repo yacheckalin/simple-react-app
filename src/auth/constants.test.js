@@ -1,4 +1,9 @@
-import { API_URL, VALID_PASSWORD, VALID_LOGIN } from "./constants";
+import {
+  API_URL,
+  VALID_PASSWORD,
+  VALID_LOGIN,
+  DEFAULT_IS_AUTHORISED,
+} from "./constants";
 
 describe("constants", () => {
   test("API_URL", () => {
@@ -9,5 +14,8 @@ describe("constants", () => {
   });
   test("VALID_PASSWORD", () => {
     expect(VALID_PASSWORD).toEqual("TestPassword123_");
+  });
+  test("DEFAULT_IS_AUTHORISED", () => {
+    expect(DEFAULT_IS_AUTHORISED).toBe(false);
   });
 });
