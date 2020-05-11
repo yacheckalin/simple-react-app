@@ -26,7 +26,7 @@ in authontification and state management with one source of truth
 
 #### Functionality
 
-- login form
+- login form [login: test@mail.ru, password: TestPassword123_]
 - logout
 - authorized components
 - currency exchange list with sorting/marking as favorite
