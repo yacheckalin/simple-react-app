@@ -11,6 +11,15 @@ import HistoryContextProvider from "../history/history-context-provider";
 import { useTranslation } from "react-i18next";
 import { useLocalStorage, writeStorage } from "@rehooks/local-storage";
 
+import {
+  CURRENCY_TAB_NAME,
+  CALCULATOR_TAB_NAME,
+  HISTORY_TAB_NAME,
+  CURRENCY_ACTIVE,
+  CALCULATOR_ACTIVE,
+  HISTORY_ACTIVE,
+} from "./constants";
+
 const Container = styled.div`
   display: flex;
   width: 100%;
@@ -60,10 +69,10 @@ const TabsContainer = () => {
   const [currentTabName] = useLocalStorage("currentTabName");
   const [activeTabHeader] = useLocalStorage("activeTabHeader");
   const [tabName, setTabName] = useState(
-    currentTabName === undefined ? "currency" : currentTabName
+    currentTabName === undefined ? CURRENCY_TAB_NAME : currentTabName
   );
   const [active, setActive] = useState(
-    activeTabHeader === undefined ? [true, false, false] : activeTabHeader
+    activeTabHeader === undefined ? CURRENCY_ACTIVE : activeTabHeader
   );
 
   const { t } = useTranslation("common");
@@ -80,8 +89,8 @@ const TabsContainer = () => {
           <div className="tab-wrapper">
             <Tab
               onClick={(e) => {
-                setTabName("currency");
-                setActive([1, 0, 0]);
+                setTabName(CURRENCY_TAB_NAME);
+                setActive(CURRENCY_ACTIVE);
               }}
               active={active[0]}
             >
@@ -89,8 +98,8 @@ const TabsContainer = () => {
             </Tab>
             <Tab
               onClick={(e) => {
-                setTabName("calculator");
-                setActive([0, 1, 0]);
+                setTabName(CALCULATOR_TAB_NAME);
+                setActive(CALCULATOR_ACTIVE);
               }}
               active={active[1]}
             >
@@ -98,8 +107,8 @@ const TabsContainer = () => {
             </Tab>
             <Tab
               onClick={(e) => {
-                setTabName("history");
-                setActive([0, 0, 1]);
+                setTabName(HISTORY_TAB_NAME);
+                setActive(HISTORY_ACTIVE);
               }}
               active={active[2]}
             >
@@ -108,9 +117,9 @@ const TabsContainer = () => {
           </div>
 
           <CurrencyContextProvider>
-            {tabName === "currency" && <CurrencyContainer />}
-            {tabName === "calculator" && <CalculatorContainer />}
-            {tabName === "history" && (
+            {tabName === CURRENCY_TAB_NAME && <CurrencyContainer />}
+            {tabName === CALCULATOR_TAB_NAME && <CalculatorContainer />}
+            {tabName === HISTORY_TAB_NAME && (
               <HistoryContextProvider>
                 <HistoryContainer />
               </HistoryContextProvider>

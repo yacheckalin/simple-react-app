@@ -12,19 +12,19 @@ exports[`<TabsContainer /> displays and shows properly 1`] = `
         className="tab-wrapper"
       >
         <styled.a
-          active={true}
+          active={1}
           onClick={[Function]}
         >
           tabs.currency
         </styled.a>
         <styled.a
-          active={false}
+          active={0}
           onClick={[Function]}
         >
           tabs.calculator
         </styled.a>
         <styled.a
-          active={false}
+          active={0}
           onClick={[Function]}
         >
           tabs.history
