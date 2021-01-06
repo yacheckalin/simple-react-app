@@ -45,7 +45,7 @@
   "license": "MIT",
   "devDependencies": {
     "@rehooks/local-storage": "^2.4.0",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.2",
     "enzyme-to-json": "^3.4.4",
